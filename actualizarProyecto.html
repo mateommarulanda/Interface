@@ -1,0 +1,63 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main>
+                <v-container>
+                    <v-card>
+                        <v-card-title primary-title>
+                            Proyectos
+                        </v-card-title>
+                        <v-card-text>
+                            formulario para actualizar proyectos
+                        </v-card-text>
+                        
+                        <v-form>
+
+
+                            <v-row>
+                                <v-col sm="649" md="6">
+                                    <v-text-field name="id" label="codigo" id="idPrAct"></v-text-field>
+                                </v-col>
+                                <v-col sm="649" md="6">
+                                    <v-text-field name="nombre" label="nombre del proyecto" id="nombrePrAct"></v-text-field>
+                                </v-col>
+                                
+                            </v-row>
+                            <select name="estados" id = "estadosAct">
+                                <option value="" disabled>Estado del proyecto</option>
+                                <option value="Activo">Activo</option>
+                                <option value="Desactivado">Desactivado</option>
+                            </select>
+                            <v-btn color="success" onclick="actProyecto()">actualizar proyecto</v-btn>
+                        </v-form>
+                    </v-card>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: () => ({
+                estados: [{ id: 01, nombre: "activo" },
+                { id: 02, nombre: "desactivado" }],
+            }),
+        })
+    </script>
+    <script src ="../Interface/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@mdi/font@4.x/css/materialdesignicons.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.min.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, minimal-ui">
+</head>
+
+<body>
+    <div id="app">
+        <v-app>
+            <v-main>
+                <v-container>
+                    <v-card>
+                        <v-card-title primary-title>
+                           Actualizar Usuarios
+                        </v-card-title>
+                        <v-card-text>
+                            formulario para llenar datos de actualizacion de usuario 
+                        </v-card-text>
+                        
+                        <v-form>
+
+
+                            <v-row>
+                                <v-col sm="649" md="6">
+                                    <v-text-field name="id" label="identificacion de registro" id="idAct"></v-text-field>
+                                </v-col>
+                                
+                            </v-row>
+
+                            <v-form>
+                                
+                                <v-col sm="649" md="6">
+                                    <v-text-field name="nombre" label="nombre" id="nombreAct"></v-text-field>
+                                </v-col>
+                                <v-col sm="649" md="6">
+                                    <v-text-field name="apellido" label="apellido" id="apellidoAct"></v-text-field>
+                                </v-col>
+
+                            </v-form>    
+
+                            <v-row>
+
+                                <v-col sm="649" md="6">
+                                    <v-text-field type = "password" name="contraseña" label="contrasena" id="contraseñaAct"></v-text-field>
+                                </v-col>
+
+                                <v-col sm="649" md="6">
+                                    <select name="estadoUs" id = "estadoUsAct">
+                                        <option value="" disabled>Seleccione su estado</option>
+                                        <option value="Estudiante">Estudiante</option>
+                                        <option value="Profesor">Profesor</option>
+                                        <option value="Otro">Otro</option>
+                                    </select>
+                                </v-col>
+
+                            </v-row>
+                            <v-btn color="success" onclick="actUsuario()">actualizar usuario</v-btn>
+                        </v-form>
+                    </v-card>
+                </v-container>
+            </v-main>
+        </v-app>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            vuetify: new Vuetify(),
+            data: () => ({
+                estados: [{ id: 01, nombre: "estudiante" },
+                { id: 02, nombre: "profesor" },
+                { id: 03, nombre: "Otro" }],
+            }),
+        })
+    </script>
+    <script src ="../Interface/main.js"></script>
+</body>
+</html>
